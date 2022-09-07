@@ -17,7 +17,7 @@ namespace GeekShooping.ProductApi.Repository
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<ProductVO>> FindAll()
+        public async Task<List<ProductVO>> FindAll()
         {
             try
             {
