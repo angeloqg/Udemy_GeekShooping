@@ -2,6 +2,7 @@
 using GeekShooping.ProductApi.Data.ValueObjects;
 using GeekShooping.ProductApi.Model;
 using GeekShooping.ProductApi.Model.Context;
+using GeekShooping.ProductApi.Utils;
 using Microsoft.EntityFrameworkCore;
 
 namespace GeekShooping.ProductApi.Repository
@@ -25,7 +26,7 @@ namespace GeekShooping.ProductApi.Repository
 
                 if (await _context.Products.AnyAsync())
                 {
-                    products = await _context.Products.ToListAsync();
+                    products = await _context.Products.AsNoTracking().ToListAsync();
                 }
 
                 return _mapper.Map<List<ProductVO>>(products);
@@ -45,7 +46,9 @@ namespace GeekShooping.ProductApi.Repository
 
                 if(await _context.Products.AnyAsync(p => p.Id == id))
                 {
-                    product = await _context.Products.FirstAsync(p => p.Id == id);
+                    product = await _context.Products
+                                    .AsNoTracking()
+                                    .FirstAsync(p => p.Id == id);
                 }
 
                 return _mapper.Map<ProductVO>(product);
@@ -76,7 +79,7 @@ namespace GeekShooping.ProductApi.Repository
             return _mapper.Map<ProductVO>(product);
         }
 
-        public async Task<ProductVO?> Update(ProductVO vo)
+        public async Task<ProductUpdateVO?> Update(ProductVO vo)
         {
             if (vo == null)
                 return null;
@@ -85,13 +88,24 @@ namespace GeekShooping.ProductApi.Repository
 
             try
             {
+                var oldProduct = await FindById(vo.Id);
                 _context.Products.Update(product);
+
                 await _context.SaveChangesAsync();
-                return _mapper.Map<ProductVO>(product);
+
+                oldProduct.Price = Convert.ToDecimal(oldProduct.Price.ToString("F2"));
+                vo.Price = Convert.ToDecimal(vo.Price.ToString("F2"));
+
+                var result = _mapper.Map<ProductUpdateVO>(product);
+                result.Status = Compare.ObjectTo(oldProduct, vo);
+
+                return result;
             }
             catch (Exception)
             {
-                return _mapper.Map<ProductVO>(product);
+                var result = _mapper.Map<ProductUpdateVO>(product);
+                result.Status = false;
+                return result;
             }
         }
 
