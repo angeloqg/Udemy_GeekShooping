@@ -144,7 +144,7 @@ namespace GeekShooping.ProductApi.Controllers
                     {
                         Success = true,
                         Message = "Dado alterado com sucesso",
-                        Data = result
+                        Data = _mapper.Map<ProductVO>(result)
                     };
                     return Ok(_result);
                 }
