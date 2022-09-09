@@ -42,5 +42,27 @@ namespace GeekShooping.Web.Utils
             content.Headers.ContentType = contentType;
             return httpClient.PutAsync(url, content);
         }
+
+        public static List<T>? DesserializationDataRange<T>(object value)
+        {
+            string json = JsonSerializer.Serialize(value);
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+            return JsonSerializer.Deserialize<List<T>>(json: json, options: options);
+        }
+
+        public static T? Desserialization<T>(object value)
+        {
+            string json = JsonSerializer.Serialize(value);
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+            return JsonSerializer.Deserialize<T>(json: json, options: options);
+        }
     }
 }
