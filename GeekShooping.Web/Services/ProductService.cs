@@ -47,7 +47,7 @@ namespace GeekShooping.Web.Services
             }
             else
             {
-                return await Task.FromResult(new ProductModel());
+                return null;
             }
         }
 
