@@ -116,7 +116,7 @@ namespace GeekShooping.Web.Services
 
                 if (result.Success)
                 {
-                    return await Task.FromResult(result.Data != null ? (bool)result.Data : false);
+                    return await Task.FromResult(result.Success);
                 }
                 else
                 {
