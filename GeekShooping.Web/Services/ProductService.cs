@@ -13,9 +13,9 @@ namespace GeekShooping.Web.Services
             _httpClient = httpClient ?? throw new ArgumentException(nameof(httpClient));
         }
 
-        public async Task<IEnumerable<ProductModel>> FindAllProducts()
+        public async Task<List<ProductModel>?> FindAllProducts()
         {
-            var response = await _httpClient.GetAsync(BasePath);
+            var response = await _httpClient.GetAsync($"{BasePath}/get");
 
             var result = await response.ReadContentAs<ProductResultModel>();
 
@@ -24,7 +24,7 @@ namespace GeekShooping.Web.Services
 
             if (result.Success)
             {
-                return await Task.FromResult(result.Data != null ?(List<ProductModel>)result.Data : new List<ProductModel>());
+                return await Task.FromResult(result.Data != null ? HttpClientExtensions.DesserializationDataRange<ProductModel>(result.Data) : new List<ProductModel>());
             }
             else
             {
@@ -32,9 +32,9 @@ namespace GeekShooping.Web.Services
             }
         }
 
-        public async Task<ProductModel> FindByIdProduct(long id)
+        public async Task<ProductModel?> FindByIdProduct(long id)
         {
-            var response = await _httpClient.GetAsync($"{BasePath}/{id}");
+            var response = await _httpClient.GetAsync($"{BasePath}/get/{id}");
 
             var result = await response.ReadContentAs<ProductResultModel>();
 
@@ -43,7 +43,7 @@ namespace GeekShooping.Web.Services
 
             if (result.Success)
             {
-                return await Task.FromResult(result.Data != null ? (ProductModel)result.Data : new ProductModel());
+                return await Task.FromResult(result.Data != null ? HttpClientExtensions.Desserialization<ProductModel>(result.Data) : new ProductModel());
             }
             else
             {
@@ -51,9 +51,9 @@ namespace GeekShooping.Web.Services
             }
         }
 
-        public async Task<ProductModel> CreateProduct(ProductModel model)
+        public async Task<ProductModel?> CreateProduct(ProductModel model)
         {
-            var response = await _httpClient.PostAsJson(BasePath, model);
+            var response = await _httpClient.PostAsJson($"{BasePath}/Create", model);
 
             if (response.IsSuccessStatusCode)
             {
@@ -64,7 +64,7 @@ namespace GeekShooping.Web.Services
 
                 if (result.Success)
                 {
-                    return await Task.FromResult(result.Data != null ? (ProductModel)result.Data : new ProductModel());
+                    return await Task.FromResult(result.Data != null ? HttpClientExtensions.Desserialization<ProductModel>(result.Data) : new ProductModel());
                 }
                 else
                 {
@@ -77,9 +77,9 @@ namespace GeekShooping.Web.Services
             }           
         }
 
-        public async Task<ProductModel> UpdateProduct(ProductModel model)
+        public async Task<ProductModel?> UpdateProduct(ProductModel model)
         {
-            var response = await _httpClient.PutAsJson(BasePath, model);
+            var response = await _httpClient.PutAsJson($"{BasePath}/Update", model);
 
             if (response.IsSuccessStatusCode)
             {
@@ -90,7 +90,7 @@ namespace GeekShooping.Web.Services
 
                 if (result.Success)
                 {
-                    return await Task.FromResult(result.Data != null ? (ProductModel)result.Data : new ProductModel());
+                    return await Task.FromResult(result.Data != null ? HttpClientExtensions.Desserialization<ProductModel>(result.Data) : new ProductModel());
                 }
                 else
                 {
@@ -105,7 +105,7 @@ namespace GeekShooping.Web.Services
 
         public async Task<bool> DeleteProductById(long id)
         {
-            var response = await _httpClient.DeleteAsync($"{BasePath}/{id}");
+            var response = await _httpClient.DeleteAsync($"{BasePath}/Delete/{id}");
 
             if (response.IsSuccessStatusCode)
             {
