@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using GeekShooping.ProductApi.Data.ValueObjects;
 using GeekShooping.ProductApi.Repository;
+using GeekShooping.ProductApi.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,6 +26,7 @@ namespace GeekShooping.ProductApi.Controllers
         }
 
         [HttpGet("Get/{id}")]
+        [Authorize]
         public async Task<IActionResult> Get(long id)
         {
             if((await _repository.FindById(id)).Id == 0)
@@ -79,6 +82,7 @@ namespace GeekShooping.ProductApi.Controllers
         }
 
         [HttpPost("Create")]
+        [Authorize]
         public async Task<IActionResult> Create([FromBody] ProductCreateVO vo)
         {
             if(vo == null)
@@ -122,6 +126,7 @@ namespace GeekShooping.ProductApi.Controllers
         }
 
         [HttpPut("Update")]
+        [Authorize]
         public async Task<IActionResult> Update([FromBody] ProductVO vo)
         {
             if (vo == null)
@@ -162,6 +167,7 @@ namespace GeekShooping.ProductApi.Controllers
         }
 
         [HttpDelete("Delete/{id}")]
+        [Authorize(Roles = Role.Admin)]
         public async Task<IActionResult> Delete(long? id)
         {
             var _resultDelete = new ProductResultDelete();
