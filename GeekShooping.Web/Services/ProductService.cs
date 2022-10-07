@@ -14,41 +14,41 @@ namespace GeekShooping.Web.Services
             _httpClient = httpClient ?? throw new ArgumentException(nameof(httpClient));
         }
 
-        public async Task<List<ProductModel>?> FindAllProducts(string token)
+        public async Task<List<ProductViewModel>?> FindAllProducts(string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             
             var response = await _httpClient.GetAsync($"{BasePath}/get");
 
-            var result = await response.ReadContentAs<ResultModel>();
+            var result = await response.ReadContentAs<ResultViewModel>();
 
             if (result == null)
-                return await Task.FromResult(new List<ProductModel>());
+                return await Task.FromResult(new List<ProductViewModel>());
 
             if (result.Success)
             {
-                return await Task.FromResult(result.Data != null ? HttpClientExtensions.DesserializationDataRange<ProductModel>(result.Data) : new List<ProductModel>());
+                return await Task.FromResult(result.Data != null ? HttpClientExtensions.DesserializationDataRange<ProductViewModel>(result.Data) : new List<ProductViewModel>());
             }
             else
             {
-                return await Task.FromResult(new List<ProductModel>());
+                return await Task.FromResult(new List<ProductViewModel>());
             }
         }
 
-        public async Task<ProductModel?> FindByIdProduct(long id, string token)
+        public async Task<ProductViewModel?> FindByIdProduct(long id, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
             var response = await _httpClient.GetAsync($"{BasePath}/get/{id}");
 
-            var result = await response.ReadContentAs<ResultModel>();
+            var result = await response.ReadContentAs<ResultViewModel>();
 
             if (result == null)
-                return await Task.FromResult(new ProductModel());
+                return await Task.FromResult(new ProductViewModel());
 
             if (result.Success)
             {
-                return await Task.FromResult(result.Data != null ? HttpClientExtensions.Desserialization<ProductModel>(result.Data) : new ProductModel());
+                return await Task.FromResult(result.Data != null ? HttpClientExtensions.Desserialization<ProductViewModel>(result.Data) : new ProductViewModel());
             }
             else
             {
@@ -56,7 +56,7 @@ namespace GeekShooping.Web.Services
             }
         }
 
-        public async Task<ProductModel?> CreateProduct(ProductModel model, string token)
+        public async Task<ProductViewModel?> CreateProduct(ProductViewModel model, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
@@ -64,14 +64,14 @@ namespace GeekShooping.Web.Services
 
             if (response.IsSuccessStatusCode)
             {
-                var result = await response.ReadContentAs<ResultModel>();
+                var result = await response.ReadContentAs<ResultViewModel>();
 
                 if (result == null)
-                    return await Task.FromResult(new ProductModel());
+                    return await Task.FromResult(new ProductViewModel());
 
                 if (result.Success)
                 {
-                    return await Task.FromResult(result.Data != null ? HttpClientExtensions.Desserialization<ProductModel>(result.Data) : new ProductModel());
+                    return await Task.FromResult(result.Data != null ? HttpClientExtensions.Desserialization<ProductViewModel>(result.Data) : new ProductViewModel());
                 }
                 else
                 {
@@ -84,7 +84,7 @@ namespace GeekShooping.Web.Services
             }           
         }
 
-        public async Task<ProductModel?> UpdateProduct(ProductModel model, string token)
+        public async Task<ProductViewModel?> UpdateProduct(ProductViewModel model, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
@@ -92,18 +92,18 @@ namespace GeekShooping.Web.Services
 
             if (response.IsSuccessStatusCode)
             {
-                var result = await response.ReadContentAs<ResultModel>();
+                var result = await response.ReadContentAs<ResultViewModel>();
 
                 if (result == null)
-                    return await Task.FromResult(new ProductModel());
+                    return await Task.FromResult(new ProductViewModel());
 
                 if (result.Success)
                 {
-                    return await Task.FromResult(result.Data != null ? HttpClientExtensions.Desserialization<ProductModel>(result.Data) : new ProductModel());
+                    return await Task.FromResult(result.Data != null ? HttpClientExtensions.Desserialization<ProductViewModel>(result.Data) : new ProductViewModel());
                 }
                 else
                 {
-                    return await Task.FromResult(new ProductModel());
+                    return await Task.FromResult(new ProductViewModel());
                 }
             }
             else
@@ -120,7 +120,7 @@ namespace GeekShooping.Web.Services
 
             if (response.IsSuccessStatusCode)
             {
-                var result = await response.ReadContentAs<ResultModel>();
+                var result = await response.ReadContentAs<ResultViewModel>();
 
                 if (result == null)
                     return await Task.FromResult(false);
