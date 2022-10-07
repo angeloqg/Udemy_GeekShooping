@@ -1,5 +1,4 @@
-﻿using GeekShooping.CartApi.Model.Base;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
 namespace GeekShooping.CartApi.Model
@@ -7,7 +6,7 @@ namespace GeekShooping.CartApi.Model
     [Table("product")]
     public class Product
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("id")]
         public long Id { get; set; }
 
