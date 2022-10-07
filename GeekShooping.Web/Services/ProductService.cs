@@ -20,7 +20,7 @@ namespace GeekShooping.Web.Services
             
             var response = await _httpClient.GetAsync($"{BasePath}/get");
 
-            var result = await response.ReadContentAs<ProductResultModel>();
+            var result = await response.ReadContentAs<ResultModel>();
 
             if (result == null)
                 return await Task.FromResult(new List<ProductModel>());
@@ -41,7 +41,7 @@ namespace GeekShooping.Web.Services
 
             var response = await _httpClient.GetAsync($"{BasePath}/get/{id}");
 
-            var result = await response.ReadContentAs<ProductResultModel>();
+            var result = await response.ReadContentAs<ResultModel>();
 
             if (result == null)
                 return await Task.FromResult(new ProductModel());
@@ -64,7 +64,7 @@ namespace GeekShooping.Web.Services
 
             if (response.IsSuccessStatusCode)
             {
-                var result = await response.ReadContentAs<ProductResultModel>();
+                var result = await response.ReadContentAs<ResultModel>();
 
                 if (result == null)
                     return await Task.FromResult(new ProductModel());
@@ -92,7 +92,7 @@ namespace GeekShooping.Web.Services
 
             if (response.IsSuccessStatusCode)
             {
-                var result = await response.ReadContentAs<ProductResultModel>();
+                var result = await response.ReadContentAs<ResultModel>();
 
                 if (result == null)
                     return await Task.FromResult(new ProductModel());
@@ -120,7 +120,7 @@ namespace GeekShooping.Web.Services
 
             if (response.IsSuccessStatusCode)
             {
-                var result = await response.ReadContentAs<ProductResultModel>();
+                var result = await response.ReadContentAs<ResultModel>();
 
                 if (result == null)
                     return await Task.FromResult(false);
