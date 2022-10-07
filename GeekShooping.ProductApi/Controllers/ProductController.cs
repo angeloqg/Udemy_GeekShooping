@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GeekShooping.ProductApi.Data;
 using GeekShooping.ProductApi.Data.ValueObjects;
 using GeekShooping.ProductApi.Repository;
 using GeekShooping.ProductApi.Utils;
