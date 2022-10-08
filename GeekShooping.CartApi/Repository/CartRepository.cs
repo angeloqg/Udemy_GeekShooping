@@ -102,8 +102,7 @@ namespace GeekShooping.CartApi.Repository
             try
             {
                 Cart cart = _mapper.Map<Cart>(vo);
-
-                //Checks if th product is already saved in th database if if does not exists then save
+                //Checks if the product is already saved in the database if it does not exist then save
                 var product = await _context.Products.FirstOrDefaultAsync(
                     p => p.Id == vo.CartDetails.FirstOrDefault().ProductId);
 
@@ -114,6 +113,7 @@ namespace GeekShooping.CartApi.Repository
                 }
 
                 //Check if CartHeader is null
+
                 var cartHeader = await _context.CartHeaders.AsNoTracking().FirstOrDefaultAsync(
                     c => c.UserId == cart.CartHeader.UserId);
 
@@ -122,10 +122,8 @@ namespace GeekShooping.CartApi.Repository
                     //Create CartHeader and CartDetails
                     _context.CartHeaders.Add(cart.CartHeader);
                     await _context.SaveChangesAsync();
-
                     cart.CartDetails.FirstOrDefault().CartHeaderId = cart.CartHeader.Id;
                     cart.CartDetails.FirstOrDefault().Product = null;
-
                     _context.CartDetails.Add(cart.CartDetails.FirstOrDefault());
                     await _context.SaveChangesAsync();
                 }
@@ -135,15 +133,13 @@ namespace GeekShooping.CartApi.Repository
                     //Check if CartDetails has same product
                     var cartDetail = await _context.CartDetails.AsNoTracking().FirstOrDefaultAsync(
                         p => p.ProductId == cart.CartDetails.FirstOrDefault().ProductId &&
-                        p.CartHeaderId == cartHeader.Id
-                        );
+                        p.CartHeaderId == cartHeader.Id);
 
                     if (cartDetail == null)
                     {
                         //Create CartDetails
                         cart.CartDetails.FirstOrDefault().CartHeaderId = cartHeader.Id;
                         cart.CartDetails.FirstOrDefault().Product = null;
-
                         _context.CartDetails.Add(cart.CartDetails.FirstOrDefault());
                         await _context.SaveChangesAsync();
                     }
@@ -154,15 +150,13 @@ namespace GeekShooping.CartApi.Repository
                         cart.CartDetails.FirstOrDefault().Count += cartDetail.Count;
                         cart.CartDetails.FirstOrDefault().Id = cartDetail.Id;
                         cart.CartDetails.FirstOrDefault().CartHeaderId = cartDetail.CartHeaderId;
-
                         _context.CartDetails.Update(cart.CartDetails.FirstOrDefault());
                         await _context.SaveChangesAsync();
                     }
                 }
-
                 return _mapper.Map<CartVO>(cart);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return await Task.FromResult(new CartVO());
             }
