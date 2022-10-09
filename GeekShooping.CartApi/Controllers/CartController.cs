@@ -133,5 +133,64 @@ namespace GeekShooping.CartApi.Controllers
                 return BadRequest(_result);
             }
         }
+
+        [HttpPost("apply-coupon")]
+        public async Task<IActionResult> ApplyCoupon([FromBody] CartVO vo)
+        {
+            var status = await _repository.ApplyCoupon(vo.CartHeader.UserId, vo.CartHeader.CouponCode);
+
+            if (status)
+            {
+                _result = new CartResult
+                {
+                    Success = true,
+                    Message = "Coupon aplicado com sucesso",
+                    Data = status
+                };
+
+                return Ok(_result);
+            }
+            else
+            {
+                _result = new CartResult
+                {
+                    Success = false,
+                    Message = "Falha ao aplicar coupon",
+                    Data = null
+                };
+
+                return BadRequest(_result);
+            }
+        }
+
+
+        [HttpPost("remove-coupon/{userId}")]
+        public async Task<IActionResult> RemoceCoupon([FromBody] string userId)
+        {
+            var status = await _repository.RemoveCoupon(userId);
+
+            if (status)
+            {
+                _result = new CartResult
+                {
+                    Success = true,
+                    Message = "Coupon removido com sucesso",
+                    Data = status
+                };
+
+                return Ok(_result);
+            }
+            else
+            {
+                _result = new CartResult
+                {
+                    Success = false,
+                    Message = "Falha ao remover coupon",
+                    Data = null
+                };
+
+                return BadRequest(_result);
+            }
+        }
     }
 }
