@@ -75,6 +75,12 @@ namespace GeekShooping.Web.Controllers
             return View();
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Checkout()
+        {
+            return View(await FindUserCart());
+        }
+
         private async Task<CartViewModel?> FindUserCart()
         {
             string? token = await HttpContext.GetTokenAsync("access_token");
@@ -90,7 +96,7 @@ namespace GeekShooping.Web.Controllers
 
                     if(coupon?.CouponCode != null)
                     {
-                        response.CartHeader.DescountTotal = coupon.DiscountAmount;
+                        response.CartHeader.DiscountAmount = coupon.DiscountAmount;
                     }
                 }
 
@@ -99,7 +105,7 @@ namespace GeekShooping.Web.Controllers
                     response.CartHeader.PurchaseAmount += (detail.Product.Price * detail.Count);
                 }
 
-                response.CartHeader.PurchaseAmount -= response.CartHeader.DescountTotal;
+                response.CartHeader.PurchaseAmount -= response.CartHeader.DiscountAmount;
             }
 
             return response;
