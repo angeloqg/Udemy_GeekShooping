@@ -82,7 +82,7 @@ namespace GeekShooping.ProductApi.Controllers
         }
 
         [HttpPost("Create")]
-        [Authorize]
+        [Authorize(Roles = Role.Admin)]
         public async Task<IActionResult> Create([FromBody] ProductCreateVO vo)
         {
             if(vo == null)
@@ -126,7 +126,7 @@ namespace GeekShooping.ProductApi.Controllers
         }
 
         [HttpPut("Update")]
-        [Authorize]
+        [Authorize(Roles = Role.Admin)]
         public async Task<IActionResult> Update([FromBody] ProductVO vo)
         {
             if (vo == null)

@@ -28,7 +28,7 @@ namespace GeekShooping.Web.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = Role.Admin)]
         public async Task<IActionResult> ProductCreate(ProductViewModel model)
         {
             if (ModelState.IsValid)
@@ -53,7 +53,7 @@ namespace GeekShooping.Web.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = Role.Admin)]
         public async Task<IActionResult> ProductUpdate(ProductViewModel model)
         {
             if (ModelState.IsValid)
