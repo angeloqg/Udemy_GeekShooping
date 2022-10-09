@@ -19,7 +19,7 @@ namespace GeekShooping.CouponApi.Controllers
             _result = new CouponResult();
         }
 
-        [HttpGet("find-coupon{couponcode}")]
+        [HttpGet("find-coupon/{couponcode}")]
         public async Task<IActionResult> FindCoupon(string? couponcode)
         {
             var coupom = await _repository.GetCouponByCouponCode(couponcode);

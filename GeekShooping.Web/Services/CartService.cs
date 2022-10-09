@@ -118,17 +118,62 @@ namespace GeekShooping.Web.Services
             {
                 throw new Exception("Somenthing went wrong calling API");
             }
-
         }
 
-        public async Task<bool> ApplyCoupon(CartViewModel cart, string couponCode, string token)
+        public async Task<bool> ApplyCoupon(CartViewModel model, string token)
         {
-            throw new NotImplementedException();
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            var response = await _httpClient.PostAsJsonAsync($"{BasePath}/apply-coupon", model);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.ReadContentAs<ResultViewModel>();
+
+                if (result == null)
+                    return await Task.FromResult(false);
+
+                if (result.Success)
+                {
+                    return await Task.FromResult(result.Success);
+                }
+                else
+                {
+                    return await Task.FromResult(false);
+                }
+            }
+            else
+            {
+                throw new Exception("Somenthing went wrong calling API");
+            }
         }
 
         public async Task<bool> RemoveCoupon(string userId, string token)
         {
-            throw new NotImplementedException();
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            var response = await _httpClient.DeleteAsync($"{BasePath}/remove-coupon/{userId}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.ReadContentAs<ResultViewModel>();
+
+                if (result == null)
+                    return await Task.FromResult(false);
+
+                if (result.Success)
+                {
+                    return await Task.FromResult(result.Success);
+                }
+                else
+                {
+                    return await Task.FromResult(false);
+                }
+            }
+            else
+            {
+                throw new Exception("Somenthing went wrong calling API");
+            }
         }
 
         public async Task<bool> ClearCart(string userId, string token)

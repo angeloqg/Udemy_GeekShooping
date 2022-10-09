@@ -164,8 +164,8 @@ namespace GeekShooping.CartApi.Controllers
         }
 
 
-        [HttpPost("remove-coupon/{userId}")]
-        public async Task<IActionResult> RemoceCoupon([FromBody] string userId)
+        [HttpDelete("remove-coupon/{userId}")]
+        public async Task<IActionResult> RemoceCoupon(string userId)
         {
             var status = await _repository.RemoveCoupon(userId);
 
