@@ -1,4 +1,5 @@
 using AutoMapper;
+using GeekShooping.CouponApi.Model.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -10,8 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Configure Connection Database
 var connection = builder.Configuration["MySqlConnection:MySqlConnetionString"];
 
-//builder.Services.AddDbContext<MySqlContext>(options => options.UseMySql(connection,
-//                                                       ServerVersion.AutoDetect(connection)));
+builder.Services.AddDbContext<MySqlContext>(options => options.UseMySql(connection,
+                                                       ServerVersion.AutoDetect(connection)));
 
 // Configure Mapper
 //IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
