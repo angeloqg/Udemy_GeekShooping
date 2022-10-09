@@ -27,7 +27,6 @@ namespace GeekShooping.ProductApi.Controllers
         }
 
         [HttpGet("Get/{id}")]
-        [Authorize]
         public async Task<IActionResult> Get(long id)
         {
             if((await _repository.FindById(id)).Id == 0)
