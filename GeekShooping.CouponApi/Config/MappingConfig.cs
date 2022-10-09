@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using GeekShooping.CouponApi.Data.ValueObjects;
+using GeekShooping.CouponApi.Model;
 
 namespace GeekShooping.CouponApi.Config
 {
@@ -8,7 +10,7 @@ namespace GeekShooping.CouponApi.Config
         {
             var mappingConfig = new MapperConfiguration(config =>
             {
-
+                config.CreateMap<CouponVO, Coupon>().ReverseMap();
             });
 
             return mappingConfig;
