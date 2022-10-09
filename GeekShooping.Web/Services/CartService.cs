@@ -15,7 +15,7 @@ namespace GeekShooping.Web.Services
             _httpClient = httpClient ?? throw new ArgumentException(nameof(httpClient));
         }
 
-        public async Task<CartViewModel> FindCartByUserId(string userId, string token)
+        public async Task<CartViewModel> FindCartByUserId(string? userId, string? token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
@@ -32,7 +32,7 @@ namespace GeekShooping.Web.Services
             }
             else
             {
-                return null;
+                return new CartViewModel();
             }
         }
 
@@ -55,7 +55,7 @@ namespace GeekShooping.Web.Services
                 }
                 else
                 {
-                    return null;
+                    return await Task.FromResult(new CartViewModel());
                 }
             }
             else
@@ -83,7 +83,7 @@ namespace GeekShooping.Web.Services
                 }
                 else
                 {
-                    return null;
+                    return await Task.FromResult(new CartViewModel());
                 }
             }
             else
@@ -92,7 +92,7 @@ namespace GeekShooping.Web.Services
             }
         }
 
-        public async Task<bool> RemoveFromCart(long cartId, string token)
+        public async Task<bool> RemoveFromCart(int cartId, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 

@@ -43,7 +43,7 @@ namespace GeekShooping.CartApi.Controllers
                    Data = null               
                 };
 
-                return NotFound(_result);
+                return Ok(_result);
             }           
         }
 
