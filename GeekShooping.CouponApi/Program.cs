@@ -1,4 +1,5 @@
 using AutoMapper;
+using GeekShooping.CouponApi.Config;
 using GeekShooping.CouponApi.Model.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -15,9 +16,9 @@ builder.Services.AddDbContext<MySqlContext>(options => options.UseMySql(connecti
                                                        ServerVersion.AutoDetect(connection)));
 
 // Configure Mapper
-//IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
-//builder.Services.AddSingleton(mapper);
-//builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+builder.Services.AddSingleton(mapper);
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Dependency Injection
 //builder.Services.AddScoped<ICouponRepository, CouponRepository>();
