@@ -176,12 +176,35 @@ namespace GeekShooping.Web.Services
             }
         }
 
-        public async Task<bool> ClearCart(string userId, string token)
+        public async Task<CartHeaderViewModel> Checkout(CartHeaderViewModel model, string token)
         {
-            throw new NotImplementedException();
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            var response = await _httpClient.PostAsJsonAsync($"{BasePath}/checkout", model);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.ReadContentAs<ResultViewModel>();
+
+                if (result == null)
+                    return await Task.FromResult(new CartHeaderViewModel());
+
+                if (result.Success)
+                {
+                    return await Task.FromResult(result.Data != null ? HttpClientExtensions.Desserialization<CartHeaderViewModel>(result.Data) : new CartHeaderViewModel());
+                }
+                else
+                {
+                    return await Task.FromResult(new CartHeaderViewModel());
+                }
+            }
+            else
+            {
+                throw new Exception("Somenthing went wrong calling API");
+            }
         }
 
-        public async Task<CartViewModel> Checkout(CartHeaderViewModel cartHeader, string token)
+        public async Task<bool> ClearCart(string userId, string token)
         {
             throw new NotImplementedException();
         }

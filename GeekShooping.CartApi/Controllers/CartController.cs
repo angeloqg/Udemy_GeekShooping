@@ -1,5 +1,6 @@
 ﻿using GeekShooping.CartApi.Data;
 using GeekShooping.CartApi.Data.ValueObjects;
+using GeekShooping.CartApi.Messages;
 using GeekShooping.CartApi.Repository;
 using Microsoft.AspNetCore.Mvc;
 
@@ -186,6 +187,40 @@ namespace GeekShooping.CartApi.Controllers
                 {
                     Success = false,
                     Message = "Falha ao remover coupon",
+                    Data = null
+                };
+
+                return BadRequest(_result);
+            }
+        }
+
+        [HttpPost("checkout")]
+        public async Task<IActionResult> Checkout([FromBody] CheckoutHeaderVO vo)
+        {
+            var cart = await _repository.FindCartUserId(vo.UserId);
+
+            if (cart.CartDetails != null && cart.CartHeader != null)
+            {
+
+                vo.CartDetails = cart.CartDetails;
+                vo.DateTime = DateTime.Now;
+                //TASK RabbitMQ Logic comes here!!!
+
+                _result = new CartResult
+                {
+                    Success = true,
+                    Message = "Checkout efetuado com sucesso",
+                    Data = vo
+                };
+
+                return Ok(_result);
+            }
+            else
+            {
+                _result = new CartResult
+                {
+                    Success = false,
+                    Message = "Falha ao efetuar o checkout",
                     Data = null
                 };
 
