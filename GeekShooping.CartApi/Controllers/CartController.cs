@@ -197,6 +197,18 @@ namespace GeekShooping.CartApi.Controllers
         [HttpPost("checkout")]
         public async Task<IActionResult> Checkout([FromBody] CheckoutHeaderVO vo)
         {
+            if(vo?.UserId == null)
+            {
+                _result = new CartResult
+                {
+                    Success = false,
+                    Message = "Falha ao efetuar o checkout, usuário não logado",
+                    Data = null
+                };
+
+                return BadRequest(_result);
+            }
+
             var cart = await _repository.FindCartUserId(vo.UserId);
 
             if (cart.CartDetails != null && cart.CartHeader != null)
@@ -204,6 +216,7 @@ namespace GeekShooping.CartApi.Controllers
 
                 vo.CartDetails = cart.CartDetails;
                 vo.DateTime = DateTime.Now;
+
                 //TASK RabbitMQ Logic comes here!!!
 
                 _result = new CartResult
