@@ -16,7 +16,7 @@ namespace GeekShooping.CartApi.Model
         [ForeignKey("ProductId")]
         public virtual Product? Product { get; set; }
 
-        [ForeignKey("count")]
+        [Column("count")]
         public int Count { get; set; }
     }
 }
