@@ -16,6 +16,7 @@ namespace GeekShooping.CartApi.Messages
         public string? Email { get; set; }
         public string? CardNumber { get; set; }
         public string? Cvv { get; set; }
+        public string? ExpireMonthYear { get; set; }
         public int CarTotalItens { get; set; }
         public IEnumerable<CartDetailVO>? CartDetails { get; set; }
     }
