@@ -63,6 +63,10 @@ namespace GeekShooping.OrderApi.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("card_number");
 
+                    b.Property<int>("CartTotalItens")
+                        .HasColumnType("int")
+                        .HasColumnName("total_itens");
+
                     b.Property<string>("CouponCode")
                         .HasColumnType("longtext")
                         .HasColumnName("coupon_code");

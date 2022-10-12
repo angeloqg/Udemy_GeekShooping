@@ -42,7 +42,8 @@ namespace GeekShooping.OrderApi.Migrations
                     expire_month_year = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     order_total_itens = table.Column<int>(type: "int", nullable: false),
-                    payment_status = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    payment_status = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    total_itens = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GeekShooping.OrderApi.Migrations
 {
     [DbContext(typeof(MySqlContext))]
-    [Migration("20221012190410_AddOrderDataTablesOnDb")]
+    [Migration("20221012215348_AddOrderDataTablesOnDb")]
     partial class AddOrderDataTablesOnDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,6 +64,10 @@ namespace GeekShooping.OrderApi.Migrations
                     b.Property<string>("CardNumber")
                         .HasColumnType("longtext")
                         .HasColumnName("card_number");
+
+                    b.Property<int>("CartTotalItens")
+                        .HasColumnType("int")
+                        .HasColumnName("total_itens");
 
                     b.Property<string>("CouponCode")
                         .HasColumnType("longtext")
