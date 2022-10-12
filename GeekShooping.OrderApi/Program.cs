@@ -13,11 +13,6 @@ var connection = builder.Configuration["MySqlConnection:MySqlConnetionString"];
 builder.Services.AddDbContext<MySqlContext>(options => options.UseMySql(connection,
                                                        ServerVersion.AutoDetect(connection)));
 
-// Configure Mapper
-//IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
-//builder.Services.AddSingleton(mapper);
-//builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
 // Dependency Injection
 //builder.Services.AddScoped<ICartRepository, CartRepository>();
 //builder.Services.AddSingleton<IRabbitMQMessageSender, RabbitMQMessageSender>();
