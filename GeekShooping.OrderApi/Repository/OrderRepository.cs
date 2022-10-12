@@ -28,7 +28,7 @@ namespace GeekShooping.OrderApi.Repository
 
                 return await Task.FromResult(true);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 return await Task.FromResult(false);
