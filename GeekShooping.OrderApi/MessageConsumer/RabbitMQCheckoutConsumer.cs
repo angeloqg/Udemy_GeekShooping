@@ -48,7 +48,6 @@ namespace GeekShooping.OrderApi.MessageConsumer
 
             _channel.BasicConsume("checkoutqueue", false, consumer);
             return Task.CompletedTask;
-            throw new NotImplementedException();
         }
 
         private async Task ProcessOrder(CheckouHeaderVO vo)
