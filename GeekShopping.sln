@@ -7,21 +7,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{DC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{771F6CAE-826C-460B-89AF-27E6952791FB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShooping.Web", "GeekShooping.Web\GeekShooping.Web.csproj", "{144D0DBC-A9B9-44B2-A9B4-3E95F13EF00A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.Web", "GeekShooping.Web\GeekShopping.Web.csproj", "{144D0DBC-A9B9-44B2-A9B4-3E95F13EF00A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShooping.ProductApi", "GeekShooping.ProductApi\GeekShooping.ProductApi.csproj", "{8D5C80AB-B415-41A1-A1B5-ABC6387F7552}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.ProductApi", "GeekShooping.ProductApi\GeekShopping.ProductApi.csproj", "{8D5C80AB-B415-41A1-A1B5-ABC6387F7552}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShooping.IdentityServer", "GeekShooping.IdentityServer\GeekShooping.IdentityServer.csproj", "{658497B6-BC83-4802-AB27-ACF137D782AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.IdentityServer", "GeekShooping.IdentityServer\GeekShopping.IdentityServer.csproj", "{658497B6-BC83-4802-AB27-ACF137D782AF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShooping.CartApi", "GeekShooping.CartApi\GeekShooping.CartApi.csproj", "{2F12AC43-BD3F-492C-9FCB-BB9D68F5FCDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.CartApi", "GeekShooping.CartApi\GeekShopping.CartApi.csproj", "{2F12AC43-BD3F-492C-9FCB-BB9D68F5FCDD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShooping.CouponApi", "GeekShooping.CouponApi\GeekShooping.CouponApi.csproj", "{D3B7AA7C-29D4-4F00-92E6-3B5C69E413F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.CouponApi", "GeekShooping.CouponApi\GeekShopping.CouponApi.csproj", "{D3B7AA7C-29D4-4F00-92E6-3B5C69E413F1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{3A5CFA3A-63DE-43B5-9ACD-0946B5D3D384}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.MessageBus", "GeekShopping.MessageBus\GeekShopping.MessageBus.csproj", "{C442ECEC-75E5-44A5-A280-A9C67014463B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.MessageBus", "GeekShopping.MessageBus\GeekShopping.MessageBus.csproj", "{C442ECEC-75E5-44A5-A280-A9C67014463B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShooping.OrderApi", "GeekShooping.OrderApi\GeekShooping.OrderApi.csproj", "{6C8954F6-B34F-4FB0-8D66-B089CFBC4017}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.OrderApi", "GeekShooping.OrderApi\GeekShopping.OrderApi.csproj", "{6C8954F6-B34F-4FB0-8D66-B089CFBC4017}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

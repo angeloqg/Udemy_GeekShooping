@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using GeekShooping.CouponApi.Model.Base;
+using GeekShopping.CouponApi.Model.Base;
 
-namespace GeekShooping.CouponApi.Model
+namespace GeekShopping.CouponApi.Model
 {
     [Table("coupon")]
     public class Coupon : BaseEntity

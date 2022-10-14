@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GeekShooping.OrderApi.Controllers
+namespace GeekShopping.OrderApi.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]

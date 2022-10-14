@@ -1,11 +1,11 @@
-﻿using GeekShooping.Web.Models;
-using GeekShooping.Web.Services;
+﻿using GeekShopping.Web.Models;
+using GeekShopping.Web.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace GeekShooping.Web.Controllers
+namespace GeekShopping.Web.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,6 +1,6 @@
 ﻿using GeekShopping.MessageBus;
 
-namespace GeekShooping.OrderApi.Messages
+namespace GeekShopping.OrderApi.Messages
 {
     public class CheckouHeaderVO : BaseMessage
     {

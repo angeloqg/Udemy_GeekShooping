@@ -1,4 +1,4 @@
-﻿namespace GeekShooping.CartApi.Repository
+﻿namespace GeekShopping.CartApi.Repository
 {
     internal class ResultViewModel
     {

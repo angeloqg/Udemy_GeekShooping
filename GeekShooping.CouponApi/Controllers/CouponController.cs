@@ -1,9 +1,9 @@
-﻿using GeekShooping.CouponApi.Data;
-using GeekShooping.CouponApi.Repository;
+﻿using GeekShopping.CouponApi.Data;
+using GeekShopping.CouponApi.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GeekShooping.CouponApi.Controllers
+namespace GeekShopping.CouponApi.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]

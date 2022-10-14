@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "GeekShooping.IdentityServer": {
+    "GeekShopping.IdentityServer": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

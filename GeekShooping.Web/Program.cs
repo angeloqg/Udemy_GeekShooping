@@ -1,4 +1,4 @@
-using GeekShooping.Web.Services;
+using GeekShopping.Web.Services;
 using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);

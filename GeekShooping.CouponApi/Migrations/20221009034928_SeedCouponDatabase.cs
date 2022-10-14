@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace GeekShooping.CouponApi.Migrations
+namespace GeekShopping.CouponApi.Migrations
 {
     public partial class SeedCouponDatabase : Migration
     {

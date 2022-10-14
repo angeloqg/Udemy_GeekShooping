@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using GeekShooping.CouponApi.Data.ValueObjects;
-using GeekShooping.CouponApi.Model.Context;
+using GeekShopping.CouponApi.Data.ValueObjects;
+using GeekShopping.CouponApi.Model.Context;
 
-namespace GeekShooping.CouponApi.Repository
+namespace GeekShopping.CouponApi.Repository
 {
     public class CouponRepository : ICouponRepository
     {

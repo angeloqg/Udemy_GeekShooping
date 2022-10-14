@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace GeekShooping.ProductApi.Utils
+namespace GeekShopping.ProductApi.Utils
 {
     public static class Compare
     {

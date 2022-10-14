@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "GeekShooping.CartApi": {
+    "GeekShopping.CartApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

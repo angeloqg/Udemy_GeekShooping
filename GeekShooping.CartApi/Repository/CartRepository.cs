@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using GeekShooping.CartApi.Data.ValueObjects;
-using GeekShooping.CartApi.Model;
-using GeekShooping.CartApi.Model.Context;
+using GeekShopping.CartApi.Data.ValueObjects;
+using GeekShopping.CartApi.Model;
+using GeekShopping.CartApi.Model.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace GeekShooping.CartApi.Repository
+namespace GeekShopping.CartApi.Repository
 {
     public class CartRepository : ICartRepository
     {

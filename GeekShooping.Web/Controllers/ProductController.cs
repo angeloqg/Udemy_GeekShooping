@@ -1,11 +1,11 @@
-﻿using GeekShooping.Web.Models;
-using GeekShooping.Web.Services;
-using GeekShooping.Web.Utils;
+﻿using GeekShopping.Web.Models;
+using GeekShopping.Web.Services;
+using GeekShopping.Web.Utils;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GeekShooping.Web.Controllers
+namespace GeekShopping.Web.Controllers
 {
     public class ProductController : Controller
     {

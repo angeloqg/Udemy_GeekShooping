@@ -1,4 +1,4 @@
-﻿namespace GeekShooping.CartApi.Data
+﻿namespace GeekShopping.CartApi.Data
 {
     public class CartResult
     {

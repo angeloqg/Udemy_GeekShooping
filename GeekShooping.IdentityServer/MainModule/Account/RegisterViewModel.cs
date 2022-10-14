@@ -1,7 +1,7 @@
 ﻿using IdentityServerHost.Quickstart.UI;
 using System.ComponentModel.DataAnnotations;
 
-namespace GeekShooping.IdentityServer.MainModule.Account
+namespace GeekShopping.IdentityServer.MainModule.Account
 {
     public class RegisterViewModel
     {

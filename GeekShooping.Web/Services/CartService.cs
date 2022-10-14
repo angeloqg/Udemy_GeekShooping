@@ -1,9 +1,9 @@
-﻿using GeekShooping.Web.Models;
-using GeekShooping.Web.Utils;
+﻿using GeekShopping.Web.Models;
+using GeekShopping.Web.Utils;
 using System.Net.Http.Headers;
 using System.Reflection;
 
-namespace GeekShooping.Web.Services
+namespace GeekShopping.Web.Services
 {
     public class CartService : ICartService
     {

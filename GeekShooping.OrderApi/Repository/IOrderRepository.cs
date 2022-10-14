@@ -1,6 +1,6 @@
-﻿using GeekShooping.OrderApi.Model;
+﻿using GeekShopping.OrderApi.Model;
 
-namespace GeekShooping.OrderApi.Repository
+namespace GeekShopping.OrderApi.Repository
 {
     public interface IOrderRepository
     {

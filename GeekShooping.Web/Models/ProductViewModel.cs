@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GeekShooping.Web.Models
+namespace GeekShopping.Web.Models
 {
     public class ProductViewModel
     {

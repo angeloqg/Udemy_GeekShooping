@@ -1,6 +1,6 @@
-using GeekShooping.OrderApi.MessageConsumer;
-using GeekShooping.OrderApi.Model.Context;
-using GeekShooping.OrderApi.Repository;
+using GeekShopping.OrderApi.MessageConsumer;
+using GeekShopping.OrderApi.Model.Context;
+using GeekShopping.OrderApi.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;

@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
-using GeekShooping.ProductApi.Data;
-using GeekShooping.ProductApi.Data.ValueObjects;
-using GeekShooping.ProductApi.Repository;
-using GeekShooping.ProductApi.Utils;
+using GeekShopping.ProductApi.Data;
+using GeekShopping.ProductApi.Data.ValueObjects;
+using GeekShopping.ProductApi.Repository;
+using GeekShopping.ProductApi.Utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GeekShooping.ProductApi.Controllers
+namespace GeekShopping.ProductApi.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]

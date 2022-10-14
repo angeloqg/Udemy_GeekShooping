@@ -1,4 +1,4 @@
-﻿namespace GeekShooping.CouponApi.Data
+﻿namespace GeekShopping.CouponApi.Data
 {
     public class CouponResult
     {

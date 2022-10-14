@@ -1,6 +1,6 @@
-﻿using GeekShooping.CouponApi.Data.ValueObjects;
+﻿using GeekShopping.CouponApi.Data.ValueObjects;
 
-namespace GeekShooping.CouponApi.Repository
+namespace GeekShopping.CouponApi.Repository
 {
     public interface ICouponRepository
     {

@@ -1,4 +1,4 @@
-﻿namespace GeekShooping.OrderApi.Messages
+﻿namespace GeekShopping.OrderApi.Messages
 {
     public class ProductVO
     {

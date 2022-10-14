@@ -1,8 +1,8 @@
 using AutoMapper;
-using GeekShooping.CartApi.Config;
-using GeekShooping.CartApi.Model.Context;
-using GeekShooping.CartApi.RabbitMQSender;
-using GeekShooping.CartApi.Repository;
+using GeekShopping.CartApi.Config;
+using GeekShopping.CartApi.Model.Context;
+using GeekShopping.CartApi.RabbitMQSender;
+using GeekShopping.CartApi.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;

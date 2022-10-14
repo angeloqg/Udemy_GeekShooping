@@ -1,4 +1,4 @@
-﻿namespace GeekShooping.ProductApi.Data
+﻿namespace GeekShopping.ProductApi.Data
 {
     public class ProductResult
     {

@@ -18,8 +18,8 @@ using Duende.IdentityServer.Services;
 using Duende.IdentityServer.Stores;
 using Duende.IdentityServer.Test;
 using Microsoft.AspNetCore.Identity;
-using GeekShooping.IdentityServer.Model;
-using GeekShooping.IdentityServer.MainModule.Account;
+using GeekShopping.IdentityServer.Model;
+using GeekShopping.IdentityServer.MainModule.Account;
 using System.Security.Claims;
 
 namespace IdentityServerHost.Quickstart.UI

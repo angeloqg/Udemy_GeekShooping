@@ -1,6 +1,6 @@
 ﻿using GeekShopping.MessageBus;
 
-namespace GeekShooping.CartApi.RabbitMQSender
+namespace GeekShopping.CartApi.RabbitMQSender
 {
     public interface IRabbitMQMessageSender
     {

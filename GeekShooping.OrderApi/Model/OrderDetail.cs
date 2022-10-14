@@ -1,7 +1,7 @@
-﻿using GeekShooping.OrderApi.Model.Base;
+﻿using GeekShopping.OrderApi.Model.Base;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GeekShooping.OrderApi.Model
+namespace GeekShopping.OrderApi.Model
 {
     [Table("order_detail")]
     public class OrderDetail : BaseEntity

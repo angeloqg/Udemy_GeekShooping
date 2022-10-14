@@ -1,7 +1,7 @@
 using AutoMapper;
-using GeekShooping.CouponApi.Config;
-using GeekShooping.CouponApi.Model.Context;
-using GeekShooping.CouponApi.Repository;
+using GeekShopping.CouponApi.Config;
+using GeekShopping.CouponApi.Model.Context;
+using GeekShopping.CouponApi.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;

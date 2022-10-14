@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace GeekShooping.OrderApi.Migrations
+namespace GeekShopping.OrderApi.Migrations
 {
     public partial class AddOrderDataTablesOnDb : Migration
     {

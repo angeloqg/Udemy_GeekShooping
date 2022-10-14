@@ -1,12 +1,12 @@
-﻿using GeekShooping.OrderApi.Messages;
-using GeekShooping.OrderApi.Model;
-using GeekShooping.OrderApi.Repository;
+﻿using GeekShopping.OrderApi.Messages;
+using GeekShopping.OrderApi.Model;
+using GeekShopping.OrderApi.Repository;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
 using System.Text.Json;
 
-namespace GeekShooping.OrderApi.MessageConsumer
+namespace GeekShopping.OrderApi.MessageConsumer
 {
     public class RabbitMQCheckoutConsumer : BackgroundService
     {

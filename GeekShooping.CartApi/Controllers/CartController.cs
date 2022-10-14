@@ -1,11 +1,11 @@
-﻿using GeekShooping.CartApi.Data;
-using GeekShooping.CartApi.Data.ValueObjects;
-using GeekShooping.CartApi.Messages;
-using GeekShooping.CartApi.RabbitMQSender;
-using GeekShooping.CartApi.Repository;
+﻿using GeekShopping.CartApi.Data;
+using GeekShopping.CartApi.Data.ValueObjects;
+using GeekShopping.CartApi.Messages;
+using GeekShopping.CartApi.RabbitMQSender;
+using GeekShopping.CartApi.Repository;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GeekShooping.CartApi.Controllers
+namespace GeekShopping.CartApi.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
