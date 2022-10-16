@@ -15,6 +15,6 @@
         public string? Email { get; set; }
         public string? CardNumber { get; set; }
         public string? Cvv { get; set; }
-        public string? ExpiryMothYear { get; set; }
+        public string? ExpireMonthYear { get; set; }
     }
 }
