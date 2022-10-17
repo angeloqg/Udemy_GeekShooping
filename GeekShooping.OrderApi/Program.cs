@@ -23,6 +23,8 @@ builderInjection.UseMySql(connection, ServerVersion.AutoDetect(connection));
 builder.Services.AddSingleton(new OrderRepository(builderInjection.Options));
 
 builder.Services.AddHostedService<RabbitMQCheckoutConsumer>();
+builder.Services.AddHostedService<RabbitMQPaymentConsumer>();
+
 builder.Services.AddSingleton<IRabbitMQMessageSender,RabbitMQMessageSender>();
 
 builder.Services.AddControllers();
