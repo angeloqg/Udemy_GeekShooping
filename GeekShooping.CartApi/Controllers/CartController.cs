@@ -241,7 +241,10 @@ namespace GeekShopping.CartApi.Controllers
                 vo.CartDetails = cart.CartDetails;
                 vo.DateTime = DateTime.Now;
 
+                // RabbitMQ logic comes here!!!
                 _rabbitMQMessageSender.SendMessage(vo, "checkoutqueue");
+
+                await _cartRepository.ClearCart(vo.UserId);
 
                 _result = new CartResult
                 {
