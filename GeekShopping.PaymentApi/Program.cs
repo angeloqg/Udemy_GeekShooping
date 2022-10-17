@@ -1,7 +1,8 @@
-using Microsoft.EntityFrameworkCore;
+using Geekshopping.PaymentProcessor;
+using GeekShopping.PaymentApi.MessageConsumer;
+using GeekShopping.PaymentApi.RabbitMQSende;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Dependency Injection
 
-//builder.Services.AddHostedService<RabbitMQCheckoutConsumer>();
-//builder.Services.AddSingleton<IRabbitMQMessageSender, RabbitMQMessageSender>();
+builder.Services.AddSingleton<IProcessPayment, ProcessPayment>();
+builder.Services.AddSingleton<IRabbitMQMessageSender, RabbitMQMessageSender>();
+builder.Services.AddHostedService<RabbitMQPaymentConsumer>();
 
 builder.Services.AddControllers();
 
