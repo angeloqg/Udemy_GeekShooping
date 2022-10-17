@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace GeekShooping.IdentityServer.Migrations
+namespace GeekShopping.IdentityServer.Migrations
 {
     public partial class AddDefautSecurityTablesOnDB : Migration
     {

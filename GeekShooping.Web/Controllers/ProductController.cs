@@ -1,11 +1,11 @@
-﻿using GeekShooping.Web.Models;
-using GeekShooping.Web.Services;
-using GeekShooping.Web.Utils;
+﻿using GeekShopping.Web.Models;
+using GeekShopping.Web.Services;
+using GeekShopping.Web.Utils;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GeekShooping.Web.Controllers
+namespace GeekShopping.Web.Controllers
 {
     public class ProductController : Controller
     {
@@ -28,8 +28,8 @@ namespace GeekShooping.Web.Controllers
         }
 
         [HttpPost]
-        [Authorize]
-        public async Task<IActionResult> ProductCreate(ProductModel model)
+        [Authorize(Roles = Role.Admin)]
+        public async Task<IActionResult> ProductCreate(ProductViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -53,8 +53,8 @@ namespace GeekShooping.Web.Controllers
         }
 
         [HttpPost]
-        [Authorize]
-        public async Task<IActionResult> ProductUpdate(ProductModel model)
+        [Authorize(Roles = Role.Admin)]
+        public async Task<IActionResult> ProductUpdate(ProductViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace GeekShooping.Web.Controllers
 
         [HttpPost]
         [Authorize(Roles = Role.Admin)]
-        public async Task<IActionResult> ProductDelete(ProductModel model)
+        public async Task<IActionResult> ProductDelete(ProductViewModel model)
         {
             var token = await HttpContext.GetTokenAsync("access_token");
             var success = await _productService.DeleteProductById(model.Id, token);

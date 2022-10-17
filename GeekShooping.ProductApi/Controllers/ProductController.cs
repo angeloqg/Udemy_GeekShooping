@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
-using GeekShooping.ProductApi.Data.ValueObjects;
-using GeekShooping.ProductApi.Repository;
-using GeekShooping.ProductApi.Utils;
+using GeekShopping.ProductApi.Data;
+using GeekShopping.ProductApi.Data.ValueObjects;
+using GeekShopping.ProductApi.Repository;
+using GeekShopping.ProductApi.Utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GeekShooping.ProductApi.Controllers
+namespace GeekShopping.ProductApi.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
@@ -26,7 +27,6 @@ namespace GeekShooping.ProductApi.Controllers
         }
 
         [HttpGet("Get/{id}")]
-        [Authorize]
         public async Task<IActionResult> Get(long id)
         {
             if((await _repository.FindById(id)).Id == 0)
@@ -82,7 +82,7 @@ namespace GeekShooping.ProductApi.Controllers
         }
 
         [HttpPost("Create")]
-        [Authorize]
+        [Authorize(Roles = Role.Admin)]
         public async Task<IActionResult> Create([FromBody] ProductCreateVO vo)
         {
             if(vo == null)
@@ -126,7 +126,7 @@ namespace GeekShooping.ProductApi.Controllers
         }
 
         [HttpPut("Update")]
-        [Authorize]
+        [Authorize(Roles = Role.Admin)]
         public async Task<IActionResult> Update([FromBody] ProductVO vo)
         {
             if (vo == null)

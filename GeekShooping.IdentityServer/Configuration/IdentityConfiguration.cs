@@ -1,7 +1,7 @@
 ﻿using Duende.IdentityServer.Models;
 using Duende.IdentityServer;
 
-namespace GeekShooping.IdentityServer.Configuration
+namespace GeekShopping.IdentityServer.Configuration
 {
     public static class IdentityConfiguration
     {

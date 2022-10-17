@@ -1,4 +1,4 @@
-using GeekShooping.Web.Services;
+using GeekShopping.Web.Services;
 using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,13 +7,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // HttpClient configuration
-var configuration = builder.Configuration["ServiceUrls:ProductApi"];
-
 builder.Services.AddHttpClient<IProductService, ProductService>(
-    c => c.BaseAddress = new Uri(configuration)
+    c => c.BaseAddress = new Uri(builder.Configuration["ServiceUrls:ProductApi"])
+);
+builder.Services.AddHttpClient<ICartService, CartService>(
+    c => c.BaseAddress = new Uri(builder.Configuration["ServiceUrls:CartApi"])
+);
+builder.Services.AddHttpClient<ICouponService, CouponService>(
+    c => c.BaseAddress = new Uri(builder.Configuration["ServiceUrls:CouponApi"])
 );
 
- builder.Services.AddAuthentication(options =>
+builder.Services.AddAuthentication(options =>
  {
      options.DefaultScheme = "Cookies";
      options.DefaultChallengeScheme = "oidc";

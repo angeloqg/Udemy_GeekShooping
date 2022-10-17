@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{DCC03A9B-85E4-4A22-A969-7EF4248F690B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{771F6CAE-826C-460B-89AF-27E6952791FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.Web", "GeekShooping.Web\GeekShopping.Web.csproj", "{144D0DBC-A9B9-44B2-A9B4-3E95F13EF00A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.ProductApi", "GeekShooping.ProductApi\GeekShopping.ProductApi.csproj", "{8D5C80AB-B415-41A1-A1B5-ABC6387F7552}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.IdentityServer", "GeekShooping.IdentityServer\GeekShopping.IdentityServer.csproj", "{658497B6-BC83-4802-AB27-ACF137D782AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.CartApi", "GeekShooping.CartApi\GeekShopping.CartApi.csproj", "{2F12AC43-BD3F-492C-9FCB-BB9D68F5FCDD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.CouponApi", "GeekShooping.CouponApi\GeekShopping.CouponApi.csproj", "{D3B7AA7C-29D4-4F00-92E6-3B5C69E413F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{3A5CFA3A-63DE-43B5-9ACD-0946B5D3D384}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.MessageBus", "GeekShopping.MessageBus\GeekShopping.MessageBus.csproj", "{C442ECEC-75E5-44A5-A280-A9C67014463B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.OrderApi", "GeekShooping.OrderApi\GeekShopping.OrderApi.csproj", "{6C8954F6-B34F-4FB0-8D66-B089CFBC4017}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payments", "Payments", "{1DC5D376-E328-45B8-9E8C-8519CA1856D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geekshopping.PaymentProcessor", "Geekshopping.PaymentProcessor\Geekshopping.PaymentProcessor.csproj", "{D193A4C8-8411-491A-8D0A-34CC3E1CF2AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.PaymentApi", "GeekShopping.PaymentApi\GeekShopping.PaymentApi.csproj", "{399C2BB0-E7DC-45DC-80DB-B15A4C972C5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{144D0DBC-A9B9-44B2-A9B4-3E95F13EF00A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{144D0DBC-A9B9-44B2-A9B4-3E95F13EF00A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{144D0DBC-A9B9-44B2-A9B4-3E95F13EF00A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{144D0DBC-A9B9-44B2-A9B4-3E95F13EF00A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D5C80AB-B415-41A1-A1B5-ABC6387F7552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D5C80AB-B415-41A1-A1B5-ABC6387F7552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D5C80AB-B415-41A1-A1B5-ABC6387F7552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D5C80AB-B415-41A1-A1B5-ABC6387F7552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{658497B6-BC83-4802-AB27-ACF137D782AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{658497B6-BC83-4802-AB27-ACF137D782AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{658497B6-BC83-4802-AB27-ACF137D782AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{658497B6-BC83-4802-AB27-ACF137D782AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F12AC43-BD3F-492C-9FCB-BB9D68F5FCDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F12AC43-BD3F-492C-9FCB-BB9D68F5FCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F12AC43-BD3F-492C-9FCB-BB9D68F5FCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F12AC43-BD3F-492C-9FCB-BB9D68F5FCDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B7AA7C-29D4-4F00-92E6-3B5C69E413F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B7AA7C-29D4-4F00-92E6-3B5C69E413F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B7AA7C-29D4-4F00-92E6-3B5C69E413F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B7AA7C-29D4-4F00-92E6-3B5C69E413F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C442ECEC-75E5-44A5-A280-A9C67014463B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C442ECEC-75E5-44A5-A280-A9C67014463B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C442ECEC-75E5-44A5-A280-A9C67014463B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C442ECEC-75E5-44A5-A280-A9C67014463B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C8954F6-B34F-4FB0-8D66-B089CFBC4017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C8954F6-B34F-4FB0-8D66-B089CFBC4017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C8954F6-B34F-4FB0-8D66-B089CFBC4017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C8954F6-B34F-4FB0-8D66-B089CFBC4017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D193A4C8-8411-491A-8D0A-34CC3E1CF2AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D193A4C8-8411-491A-8D0A-34CC3E1CF2AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D193A4C8-8411-491A-8D0A-34CC3E1CF2AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D193A4C8-8411-491A-8D0A-34CC3E1CF2AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{399C2BB0-E7DC-45DC-80DB-B15A4C972C5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{399C2BB0-E7DC-45DC-80DB-B15A4C972C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{399C2BB0-E7DC-45DC-80DB-B15A4C972C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{399C2BB0-E7DC-45DC-80DB-B15A4C972C5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{144D0DBC-A9B9-44B2-A9B4-3E95F13EF00A} = {DCC03A9B-85E4-4A22-A969-7EF4248F690B}
+		{8D5C80AB-B415-41A1-A1B5-ABC6387F7552} = {771F6CAE-826C-460B-89AF-27E6952791FB}
+		{658497B6-BC83-4802-AB27-ACF137D782AF} = {771F6CAE-826C-460B-89AF-27E6952791FB}
+		{2F12AC43-BD3F-492C-9FCB-BB9D68F5FCDD} = {771F6CAE-826C-460B-89AF-27E6952791FB}
+		{D3B7AA7C-29D4-4F00-92E6-3B5C69E413F1} = {771F6CAE-826C-460B-89AF-27E6952791FB}
+		{C442ECEC-75E5-44A5-A280-A9C67014463B} = {3A5CFA3A-63DE-43B5-9ACD-0946B5D3D384}
+		{6C8954F6-B34F-4FB0-8D66-B089CFBC4017} = {771F6CAE-826C-460B-89AF-27E6952791FB}
+		{D193A4C8-8411-491A-8D0A-34CC3E1CF2AD} = {1DC5D376-E328-45B8-9E8C-8519CA1856D6}
+		{399C2BB0-E7DC-45DC-80DB-B15A4C972C5D} = {771F6CAE-826C-460B-89AF-27E6952791FB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0855C6A-5A34-442C-8C6C-6348C9262AA4}
+	EndGlobalSection
+EndGlobal

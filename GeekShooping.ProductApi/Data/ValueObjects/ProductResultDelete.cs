@@ -1,4 +1,4 @@
-﻿namespace GeekShooping.ProductApi.Data.ValueObjects
+﻿namespace GeekShopping.ProductApi.Data.ValueObjects
 {
     public class ProductResultDelete
     {
